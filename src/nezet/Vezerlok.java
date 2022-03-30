@@ -403,8 +403,7 @@ public class Vezerlok extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCombobaActionPerformed
 
     private void btnListbeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListbeActionPerformed
-
-        if (jComboBox1.getSelectedIndex() > 0) {
+        if (fejlecAllapot) {
             DefaultListModel dlm = new DefaultListModel();
 
             ListModel<String> listModel = jList1.getModel();
