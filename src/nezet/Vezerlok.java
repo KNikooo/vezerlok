@@ -255,7 +255,23 @@ public class Vezerlok extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Dinamikus tartalom"));
 
+        chbHozzaFuz.setSelected(true);
         chbHozzaFuz.setText("hozzáfűz");
+        chbHozzaFuz.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                chbHozzaFuzMouseMoved(evt);
+            }
+        });
+        chbHozzaFuz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chbHozzaFuzMouseClicked(evt);
+            }
+        });
+        chbHozzaFuz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbHozzaFuzActionPerformed(evt);
+            }
+        });
 
         btnListbe.setText("combo tartalmát Listbe");
         btnListbe.addActionListener(new java.awt.event.ActionListener() {
@@ -480,6 +496,24 @@ public class Vezerlok extends javax.swing.JFrame {
             jComboBox1.addItem(txtujSzak.getText());
         }
     }//GEN-LAST:event_txtujSzakKeyReleased
+
+    private void chbHozzaFuzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbHozzaFuzActionPerformed
+        if(chbHozzaFuz.isSelected()){
+            rdbEleje.setEnabled(true);
+            rdbVege.setEnabled(true);
+        } else {
+            rdbEleje.setEnabled(false);
+            rdbVege.setEnabled(false);
+        }
+    }//GEN-LAST:event_chbHozzaFuzActionPerformed
+
+    private void chbHozzaFuzMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chbHozzaFuzMouseMoved
+        
+    }//GEN-LAST:event_chbHozzaFuzMouseMoved
+
+    private void chbHozzaFuzMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chbHozzaFuzMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chbHozzaFuzMouseClicked
 
     /**
      * @param args the command line arguments

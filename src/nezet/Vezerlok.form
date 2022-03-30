@@ -508,8 +508,14 @@
       <SubComponents>
         <Component class="javax.swing.JCheckBox" name="chbHozzaFuz">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="hozz&#xe1;f&#x171;z"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="chbHozzaFuzMouseMoved"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="chbHozzaFuzMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbHozzaFuzActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnListbe">
           <Properties>
