@@ -7,6 +7,8 @@ package nezet;
 
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 
@@ -80,7 +82,7 @@ public class Vezerlok extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Vezérlők használata");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -485,9 +487,11 @@ public class Vezerlok extends javax.swing.JFrame {
     }//GEN-LAST:event_chbHozzaFuzActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        
-        if(JOptionPane.showConfirmDialog(this, "Biztos kilép?","Kilépés",JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION){
-    }
+        Icon icon=new ImageIcon(this.getClass().getResource("kepek/unnamed.png"));
+        int gomb=JOptionPane.showConfirmDialog(this, "Biztos kilép?","Kilépés",JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        if(gomb == JOptionPane.OK_OPTION){
+            System.exit(0);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     /**
