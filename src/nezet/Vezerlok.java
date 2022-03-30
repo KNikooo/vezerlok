@@ -82,6 +82,11 @@ public class Vezerlok extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vezérlők használata");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,11 +107,6 @@ public class Vezerlok extends javax.swing.JFrame {
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
         jToggleButton1.setText("Fejlécet nem enged");
-        jToggleButton1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jToggleButton1StateChanged(evt);
-            }
-        });
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -257,16 +257,6 @@ public class Vezerlok extends javax.swing.JFrame {
 
         chbHozzaFuz.setSelected(true);
         chbHozzaFuz.setText("hozzáfűz");
-        chbHozzaFuz.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                chbHozzaFuzMouseMoved(evt);
-            }
-        });
-        chbHozzaFuz.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chbHozzaFuzMouseClicked(evt);
-            }
-        });
         chbHozzaFuz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chbHozzaFuzActionPerformed(evt);
@@ -290,11 +280,6 @@ public class Vezerlok extends javax.swing.JFrame {
         jLabel3.setText("Új szak:");
 
         txtujSzak.setText("jTextField1");
-        txtujSzak.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtujSzakActionPerformed(evt);
-            }
-        });
         txtujSzak.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtujSzakKeyReleased(evt);
@@ -472,10 +457,6 @@ public class Vezerlok extends javax.swing.JFrame {
         pswJelszo.setText(jComboBox1.getSelectedItem().toString());
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jToggleButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jToggleButton1StateChanged
-
-    }//GEN-LAST:event_jToggleButton1StateChanged
-
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
        if(jTabbedPane1.getSelectedIndex()==1 && buttonGroup1.getSelection()==null){
             JOptionPane.showMessageDialog(this.rootPane, "Nincs nem kiválasztva!");
@@ -486,10 +467,6 @@ public class Vezerlok extends javax.swing.JFrame {
             jTextArea1.setText("nem kér hírlevelet");
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
-
-    private void txtujSzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtujSzakActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtujSzakActionPerformed
 
     private void txtujSzakKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtujSzakKeyReleased
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
@@ -507,13 +484,11 @@ public class Vezerlok extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_chbHozzaFuzActionPerformed
 
-    private void chbHozzaFuzMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chbHozzaFuzMouseMoved
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         
-    }//GEN-LAST:event_chbHozzaFuzMouseMoved
-
-    private void chbHozzaFuzMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chbHozzaFuzMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chbHozzaFuzMouseClicked
+        if(JOptionPane.showConfirmDialog(this, "Biztos kilép?","Kilépés",JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION){
+    }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
