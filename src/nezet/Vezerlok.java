@@ -5,6 +5,7 @@
  */
 package nezet;
 
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
@@ -273,6 +274,16 @@ public class Vezerlok extends javax.swing.JFrame {
         jLabel3.setText("Új szak:");
 
         txtujSzak.setText("jTextField1");
+        txtujSzak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtujSzakActionPerformed(evt);
+            }
+        });
+        txtujSzak.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtujSzakKeyReleased(evt);
+            }
+        });
 
         btnComboba.setText("Felvesz");
         btnComboba.addActionListener(new java.awt.event.ActionListener() {
@@ -459,6 +470,16 @@ public class Vezerlok extends javax.swing.JFrame {
             jTextArea1.setText("nem kér hírlevelet");
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void txtujSzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtujSzakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtujSzakActionPerformed
+
+    private void txtujSzakKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtujSzakKeyReleased
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jComboBox1.addItem(txtujSzak.getText());
+        }
+    }//GEN-LAST:event_txtujSzakKeyReleased
 
     /**
      * @param args the command line arguments
