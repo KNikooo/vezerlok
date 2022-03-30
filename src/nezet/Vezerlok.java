@@ -453,6 +453,10 @@ public class Vezerlok extends javax.swing.JFrame {
        if(jTabbedPane1.getSelectedIndex()==1 && buttonGroup1.getSelection()==null){
             JOptionPane.showMessageDialog(this.rootPane, "Nincs nem kiválasztva!");
             jTabbedPane1.setSelectedIndex(0);
+        }else if(jCheckBox1.isSelected()){
+            jTextArea1.setText("kér hírlevelet");
+        }else if(jCheckBox1.isSelected()==false){
+            jTextArea1.setText("nem kér hírlevelet");
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
