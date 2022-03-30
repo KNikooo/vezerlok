@@ -83,6 +83,11 @@ public class Vezerlok extends javax.swing.JFrame {
         setTitle("Vezérlők használata");
 
         jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -442,8 +447,14 @@ public class Vezerlok extends javax.swing.JFrame {
 
     private void jToggleButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jToggleButton1StateChanged
 
-
     }//GEN-LAST:event_jToggleButton1StateChanged
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+       if(jTabbedPane1.getSelectedIndex()==1 && buttonGroup1.getSelection()==null){
+            JOptionPane.showMessageDialog(this.rootPane, "Nincs nem kiválasztva!");
+            jTabbedPane1.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     /**
      * @param args the command line arguments
